@@ -1,4 +1,9 @@
 const ListProducts = () => {
+  // Je veux créer un bouton pour chaque produit
+  // au clic sur le bouton
+  // je veux demander à mon api de supprimer le Produit avec une fausse fonction
+  // en attendant on va juste afficher un message dans la console avec le produit à supprimer
+
   const productsFromApi = [
     {
       id: 1,
@@ -20,8 +25,11 @@ const ListProducts = () => {
     },
   ];
 
-  const handleDelete = (product) => {
-    // sendDeleteProductToApi(product.id);
+  const deleteProduct = () => {
+    // fausse requête vers l'api pour supprimer le produit
+    // l'api a besoin de l'id du produit à supprimer
+    // deleteProductInApi();
+    console.log("supprimer le produit");
   };
 
   return (
@@ -34,7 +42,12 @@ const ListProducts = () => {
             <h2>{product.title}</h2>
             <p>{product.description}</p>
             <p>{product.price}</p>
-            <button onClick={() => handleDelete(product)}>Supprimer le produit</button>
+            {/* 
+              on créé un bouton pour chaque produit
+              et on lui attache un event listener click
+
+             */}
+            <button onClick={deleteProduct}>Supprimer le produit</button>
           </div>
         );
       })}
