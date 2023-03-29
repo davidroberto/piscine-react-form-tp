@@ -25,11 +25,10 @@ const ListProducts = () => {
     },
   ];
 
-  const deleteProduct = () => {
-    // fausse requête vers l'api pour supprimer le produit
-    // l'api a besoin de l'id du produit à supprimer
-    // deleteProductInApi();
-    console.log("supprimer le produit");
+  const handleDeleteClick = (product) => {
+    console.log("Je veux supprimer le produit" + product.title);
+
+    // deleteProductOnApi(product.id);
   };
 
   return (
@@ -42,12 +41,7 @@ const ListProducts = () => {
             <h2>{product.title}</h2>
             <p>{product.description}</p>
             <p>{product.price}</p>
-            {/* 
-              on créé un bouton pour chaque produit
-              et on lui attache un event listener click
-
-             */}
-            <button onClick={deleteProduct}>Supprimer le produit</button>
+            <button onClick={() => handleDeleteClick(product)}>Supprimer le produit</button>
           </div>
         );
       })}
