@@ -4,8 +4,8 @@ import ListProducts from "./ListProducts";
 function App() {
   return (
     <div>
+      {/* <ListProducts /> */}
       <CreateProduct />
-      <ListProducts />
     </div>
   );
 }
